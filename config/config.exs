@@ -14,8 +14,7 @@ config :medium_graphql_api, MediumGraphqlApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "dUf8h6I3DNAgSzazU7vV0YxhwGzc+f+GwuAZLAFSfjpmu2oryyGwe71FytASqW8Z",
   render_errors: [view: MediumGraphqlApiWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: MediumGraphqlApi.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: MediumGraphqlApi.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,4 +23,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
